@@ -10,19 +10,16 @@
         <img class="logo" src="https://cloud-gx7o0gxdr-hack-club-bot.vercel.app/0starstudy.png" width="150" height="150">
         <h1>Login!</h1>
     </header>
-    <body>
-        <div class="box">
-            <form>
-                Username: <input type="text" name="username">
-                <br><br>
-                Password: <input type="password" name="password">
-                <br><br>
-                <input type="submit" value="Login!">
-            </form>
-        </div>
-        
-    </body>
-
+    <div class="box">
+        <form action="/login" method="post">
+            Username: <input type="text" name="username">
+            <br><br>
+            Password: <input type="password" name="password">
+            <br><br>
+            <input type="submit" value="Login!">
+            <p>Don't have an account? <a href="{{ url_for('signup') }}">Sign Up Here!</a></p>
+        </form>
+    </div>
 </body>
 <style>
     header{
@@ -34,7 +31,6 @@
         font-family: monospace;
         font-size: 30px;
         padding: 20px;
-        
     }
 
     h1{
