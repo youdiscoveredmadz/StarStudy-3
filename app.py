@@ -52,8 +52,8 @@ def about():
 
 @app.route('/welcome/<int:user_id>')
 def welcome(user_id):
-    user = User.query.get(user_id)
-    if user:
+    username = User.query.get(user_id)
+    if username:
         return render_template('welcome.html', username=user.name)
     else:
         return "User not found"
