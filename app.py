@@ -48,9 +48,16 @@ def signup():
 def about():
     return render_template('about.html')
 
-@app.route('/homepage')
-def homepage():
-    return render_template('welcome.html')
+
+
+@app.route('/welcome/<int:user_id>')
+def welcome(user_id):
+    user = User.query.get(user_id)
+    if user:
+        return render_template('welcome.html', username=user.name)
+    else:
+        return "User not found"
+
 
 @app.route('/contact')
 def contact():
