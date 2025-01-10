@@ -15,6 +15,23 @@
     </header>
     <body>
         <p>Welcome, {{ username }}!</p>
+        <div class="row">
+            <div class="half-row">
+                <div class="box">
+                    <p>Latest flashcards, notes, and diagrams:</p>
+                </div>
+            </div>
+            <div class="half-row">
+                <div class="box">
+                    <ul>
+                        <li><a href="userstudy.html">My Study Sets</a></li>
+                        <li><a href="usernotes.html">My Notes</a></li>
+                        <li><a href="userdiagrams.html">My Diagrams</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
     </body>
 </body>
 <style>
@@ -58,6 +75,8 @@
         top: 200px;
         left: 400px;
         border-radius: 30px;
+        color:black;
+        text-align:left; 
     }
     .studysetButton{
         background-color: #FFD058;
@@ -111,6 +130,22 @@
         top: 40px;
         left: 700px;
         box-shadow: 8px 8px 5px lightgray;
+    }
+    .row{
+        text-align: left;
+        width: 100%;
+        display: block;
+    }
+
+    .half-row{
+        display: inline-block;
+        width: 48%;
+        padding: 1%;
+        float: left;
+    }
+    
+    .clear{
+        clear: both;
     }
 </style>
 </html>
