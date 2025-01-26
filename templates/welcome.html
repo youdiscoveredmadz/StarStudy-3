@@ -8,25 +8,22 @@
 <body>
     <header>
         <img class="logo" src="https://cloud-gx7o0gxdr-hack-club-bot.vercel.app/0starstudy.png" width="150" height="150"> 
-        <a class="studysetButton" href="studyset.html">Study Set Creator</a>
-        <a class="diagramButton" href="diagram.html">Diagram Creator</a>
-        <a class="noteButton" href="note.html">Note Creator</a>
+        <a class="studysetButton" href="{{ url_for('studysetcreator') }}">Study Set Creator</a>
+        <a class="diagramButton" href="{{ url_for('quizcreator') }}">Quiz Creator</a>
+        <a class="noteButton" href="{{ url_for('notecreator') }}">Note Creator</a>
 
     </header>
     <body>
-        <p>Welcome, {{ username }}!</p>
         <div class="row">
-            <div class="half-row">
-                <div class="box">
-                    <p>Latest flashcards, notes, and diagrams:</p>
-                </div>
+            <div class="half-row"> 
+                <p>Welcome, {{ username }}!</p>
             </div>
             <div class="half-row">
                 <div class="box">
                     <ul>
-                        <li><a href="userstudy.html">My Study Sets</a></li>
-                        <li><a href="usernotes.html">My Notes</a></li>
-                        <li><a href="userdiagrams.html">My Diagrams</a></li>
+                        <li><a href="{{ url_for('studysetdisplay') }}">My Study Sets</a></li>
+                        <li><a href="{{ url_for('notedisplay') }}">My Notes</a></li>
+                        <li><a href="{{ url_for('quizdisplay') }}">My Quizes</a></li>
                     </ul>
                 </div>
             </div>

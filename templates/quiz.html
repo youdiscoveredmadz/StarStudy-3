@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Set Creator</title>
+    <title>Quiz Creator</title>
 </head>
 <body>
     <header>
         <img class="logo" src="https://cloud-gx7o0gxdr-hack-club-bot.vercel.app/0starstudy.png" width="150" height="150"> 
-        <h1 class="box">Study Set Creator</h1>
+        <h1 class="box">Quiz Creator</h1>
     </header>
-    <form action="{{ url_for('studysetcreator') }}" method="post">
-        <div class="row" id="cards-container">
+    <form action="{{ url_for('quizcreator') }}" method="post">
+        <div class="row" id="questions-container">
             <div class="half-row">
-                <input type="text" name="term" placeholder="Term">
+                <input type="text" name="question" placeholder="Question">
             </div>
             <div class="half-row">
-                <input type="text" name="definition" placeholder="Definition">
+                <input type="text" name="answer" placeholder="Answer">
             </div>
             <div class="clear"></div>
         </div>
-        <button type="submit">Create Study Set</button>
+        <button type="submit">Create Quiz</button>
     </form>
-    <button type="button" onclick="addCard()">Add Term</button>
+    <button type="button" onclick="addQuestion()">Add Question</button>
 </body>
 <style>
     header{
@@ -74,6 +74,7 @@
         border-radius: 30px;
         margin: 1%;
     }
+    
 
     .row{
         text-align: left;
@@ -126,19 +127,19 @@
     }
 </style>
 <script>
-    function addCard() {
-        let cardContainer = document.createElement('div');
-        cardContainer.classList.add('row');
-        cardContainer.innerHTML = `
+    function addQuestion() {
+        let questionContainer = document.createElement('div');
+        questionContainer.classList.add('row');
+        questionContainer.innerHTML = `
             <div class="half-row">
-                <input type="text" name="term" placeholder="Term">
+                <input type="text" name="question" placeholder="Question">
             </div>
             <div class="half-row">
-                <input type="text" name="definition" placeholder="Definition">
+                <input type="text" name="answer" placeholder="Answer">
             </div>
             <div class="clear"></div>
         `;
-        document.getElementById('cards-container').appendChild(cardContainer);
+        document.getElementById('questions-container').appendChild(questionContainer);
     }
 </script>
 </html>

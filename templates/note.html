@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Creator</title>
+</head>
+<body>
+    <header>
+        <img class="logo" src="https://cloud-gx7o0gxdr-hack-club-bot.vercel.app/0starstudy.png" width="150" height="150"> 
+        <h1 class="box">Note Creator</h1>
+    </header>
+    <body>
+        <section>
+            <div class="button-container">
+                <button onclick="editoroption1()" title="Bold Text">
+                    Bold
+                </button>
+                <button onclick="editoroption2()" title="Italic Text">
+                    Italic
+                </button>
+                <button onclick="editoroption3()" title="Left Align">
+                    Align Left
+                </button>
+                <button onclick="editoroption4()" title="Center Align">
+                    Align Center
+                </button>
+                <button onclick="editoroption5()" title="Right Align">
+                    Align Right
+                </button>
+                <button onclick="editoroption6()" title="Uppercase Text">
+                    Upper Case
+                </button>
+                <button onclick="editoroption7()" title="Lowercase Text">
+                    Lower Case
+                </button>
+                <button onclick="editoroption8()" title="Capitalize Text">
+                    Capitalize
+                </button>
+                <button onclick="editoroption9()" title="Clear Text">
+                    Clear Text
+                </button>
+            </div>
+            <form action="{{ url_for('notecreator') }}" method="post">
+                <textarea id="textarea1" name="note" rows="15" placeholder="Your text here..."></textarea>
+                <input type="submit" value="Create Note">
+            </form>
+
+            </section>
+            <script src="script.js"></script>
+        </form>
+    </body>
+</body>
+<style>
+    header{
+        font-family: monospace;
+        font-size: large;
+    }
+
+    body{
+        font-family: monospace;
+        font-size: 30px;
+        padding: 20px;
+    }
+
+    h1{
+        font-family: monospace;
+        font-size: 50px;
+        padding: 20px;
+        position: absolute;
+        top: 40px;
+        left: 500px;
+        margin: 2px 2px;
+        background-image: linear-gradient(to bottom right, #ee9700, #FFD058);
+        border-radius: 30px;
+    }
+
+    .logo{
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    .box{
+        background-image: linear-gradient(to bottom right, #ee9700, #FFD058);
+        font-family: monospace;
+        font-size: 30px;
+        height: 50px;
+        width: 400px;
+        text-align: center;
+    }
+    
+    .section {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    }
+
+    button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 30px;
+    background-color: #FFD058;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    }
+
+    button:hover {
+    background-color: #ee9700;
+    }
+
+    textarea {
+    width: 100%;
+    border: 1px solid #FFD058;
+    border-radius: 5px;
+    padding: 10px;
+    resize: none;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type=submit], input[type=reset] {
+        background-color: #FFD058;
+        border: none;
+        color: rgb(0, 0, 0);
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 30px;
+        width:600px;
+        height:100px;
+        font-size: 50px;
+        left: 400px;
+        top: 600px;
+        position: absolute;
+    }
+</style>
+<script>
+    function editoroption1() {
+        document.getElementById("textarea1")
+            .style.fontWeight = "bold";
+    }
+
+    function editoroption2() {
+        document.getElementById("textarea1")
+            .style.fontStyle = "italic";
+    }
+
+    function editoroptionr3() {
+        document.getElementById("textarea1")
+            .style.textAlign = "left";
+    }
+
+    function editoroption4() {
+        document.getElementById("textarea1")
+            .style.textAlign = "center";
+    }
+
+    function editoroption5() {
+        document.getElementById("textarea1")
+            .style.textAlign = "right";
+    }
+
+    function editoroption6() {
+        document.getElementById("textarea1")
+            .style.textTransform = "uppercase";
+    }
+
+    function editoroption7() {
+        document.getElementById("textarea1")
+            .style.textTransform = "lowercase";
+    }
+
+    function editoroption8() {
+        document.getElementById("textarea1")
+            .style.textTransform = "capitalize";
+    }
+
+    function editoroption9() {
+        document.getElementById("textarea1")
+            .style.fontWeight = "normal";
+        document.getElementById("textarea1")
+            .style.textAlign = "left";
+        document.getElementById("textarea1")
+            .style.fontStyle = "normal";
+        document.getElementById("textarea1")
+            .style.textTransform = "capitalize";
+        document.getElementById("textarea1")
+            .value = "";
+    }
+
+    
+</script>
+</html>
